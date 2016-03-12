@@ -172,6 +172,7 @@ $mysql->close();
 EOPHP
 fi
 
-#exec "$@"
+#exec "$@" . " && tail -F /var/log/apache2/error.log"
 apache2-foreground && tail -F /var/log/apache2/error.log
+#apache2-foreground
 
