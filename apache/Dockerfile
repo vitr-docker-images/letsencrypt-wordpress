@@ -35,4 +35,4 @@ COPY docker-entrypoint.sh /entrypoint.sh
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/entrypoint.sh"]
 #CMD ["apache2-foreground"]
-CMD apache2-foreground && tail -F /var/log/apache2/error.log
+CMD ["apache2-foreground && tail -F /var/log/apache2/error.log"]

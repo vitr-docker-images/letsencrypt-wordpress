@@ -172,4 +172,4 @@ $mysql->close();
 EOPHP
 fi
 
-exec "$@"
+exec $@
