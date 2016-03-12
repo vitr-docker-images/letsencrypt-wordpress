@@ -31,7 +31,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VER
 	&& chown -R www-data:www-data /usr/src/wordpress
 
 # install letsencrypt
-RUN echo "export TERM=xterm" >> ~/.bashrc
+RUN echo "export TERM=xterm" >> ~/.bashrc \
 	&& apt-get update && apt-get -y install git \
 	&& rm -rf "/opt/letsencrypt" \
 	&& git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
