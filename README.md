@@ -37,6 +37,17 @@ _===end of insert===_
     docker-compose up -d
     docker exec -ti wp_wordpress_1 bash
     
+now run inside the wordpress container
+    export TERM=xterm
+    apt-get update
+    apt-get install git 
+    git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+    cd /opt/letsencrypt
+    ./letsencrypt-auto --apache -d yourdomain.com
+    
+    
+more here
+https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
     
     
     
