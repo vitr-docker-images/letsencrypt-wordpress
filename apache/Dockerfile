@@ -33,6 +33,7 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VER
 # install letsencrypt
 RUN export TERM=xterm \
 	apt-get -y install git \
+	rm -rf /opt/letsencrypt \
 	git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
 
 COPY docker-entrypoint.sh /entrypoint.sh
