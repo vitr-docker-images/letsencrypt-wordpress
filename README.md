@@ -38,6 +38,7 @@ _===end of insert===_
     docker exec -ti wp_wordpress_1 bash
     
 now run inside the wordpress container
+
     export TERM=xterm
     apt-get update
     apt-get install git 
