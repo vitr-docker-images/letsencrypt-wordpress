@@ -30,6 +30,11 @@ RUN curl -o wordpress.tar.gz -SL https://wordpress.org/wordpress-${WORDPRESS_VER
 	&& rm wordpress.tar.gz \
 	&& chown -R www-data:www-data /usr/src/wordpress
 
+# install letsencrypt
+RUN export TERM=xterm \
+	apt-get -y install git \
+	git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
+
 COPY docker-entrypoint.sh /entrypoint.sh
 
 # grr, ENTRYPOINT resets CMD now
