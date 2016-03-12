@@ -16,8 +16,8 @@ current letsencrypt rate limit is:  **5** certificates in **7** days
     mkdir wp
     cd wp
     vi docker-compose.yml
+    
 _===insert the following lines===_
-
     wordpress:
       hostname: yourdomain.com
       image: vitr/letsencrypt-wordpress
