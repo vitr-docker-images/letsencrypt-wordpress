@@ -1,7 +1,5 @@
 FROM php:5.6-apache
 
-MAINTAINER Vitaliy Ryepnoy <vitdotonline@gmail.com> http://vit.online
-
 RUN a2enmod rewrite expires
 
 # install the PHP extensions we need
@@ -36,4 +34,5 @@ COPY docker-entrypoint.sh /entrypoint.sh
 
 # grr, ENTRYPOINT resets CMD now
 ENTRYPOINT ["/entrypoint.sh"]
+#CMD ["apache2-foreground"]
 CMD apache2-foreground && tail -F /var/log/apache2/error.log
