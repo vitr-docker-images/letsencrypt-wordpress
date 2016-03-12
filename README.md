@@ -51,6 +51,7 @@ more here
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
     
 here is some automation
+
     ./letsencrypt-auto certonly --dry-run --apache -d fut.website -m vitdotonline@gmail.com --agree-tos --redirect
     
     
