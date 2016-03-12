@@ -20,7 +20,7 @@ current letsencrypt rate limit is:  **5** certificates in **7** days
 _===insert the following lines===_
 
     wordpress:
-      hostname: yourdomain.com
+      #hostname: yourdomain.com # @TODO Config variable ${APACHE_RUN_DIR} is not defined - after running letsencrypt
       image: vitr/letsencrypt-wordpress
       links:
         - db:mysql
