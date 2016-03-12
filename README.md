@@ -10,4 +10,4 @@ https://hub.docker.com/r/vitr/letsencrypt-wordpress/
     cd docker-letsencrypt-wordpress/apache
     docker build -t vitr/letsencrypt-wordpress .
 
-current letsencrypt rate limit is:  5 certificates in 7 days
+current letsencrypt rate limit is:  **5** certificates in **7** days
