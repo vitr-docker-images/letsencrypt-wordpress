@@ -1,5 +1,7 @@
 FROM php:5.6-apache
 
+MAINTAINER Vitaliy Ryepnoy <vitdotonline@gmail.com> http://vit.online
+
 RUN a2enmod rewrite expires
 
 # install the PHP extensions we need
