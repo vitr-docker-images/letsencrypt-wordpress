@@ -11,3 +11,32 @@ https://hub.docker.com/r/vitr/letsencrypt-wordpress/
     docker build -t vitr/letsencrypt-wordpress .
 
 current letsencrypt rate limit is:  **5** certificates in **7** days
+
+### how to run letsencrypt
+    mkdir wp
+    cd wp
+    cat docker-compose.yml
+    wordpress:
+      hostname: vitr.biz
+      image: vitr/letsencrypt-wordpress
+      links:
+        - db:mysql
+      ports:
+       - 80:80
+       - 443:443
+
+    db:
+      image: mariadb
+      environment:
+       MYSQL_ROOT_PASSWORD: pass
+
+
+    docker-compose up -d
+    docker exec -ti wp_wordpress_1 bash
+    
+    
+    
+    
+    
+    
+    
