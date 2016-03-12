@@ -173,11 +173,6 @@ EOPHP
 fi
 
 #exec "$@"
-export TERM=xterm
-apt-get update
-apt-get -y install git 
-git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
-
 "$@" && tail -F /var/log/apache2/error.log
 #apache2-foreground && tail -F /var/log/apache2/error.log
 
