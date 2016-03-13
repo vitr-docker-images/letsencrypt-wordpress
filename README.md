@@ -13,48 +13,34 @@ https://hub.docker.com/r/vitr/letsencrypt-wordpress/
 current letsencrypt rate limit is:  **5** certificates in **7** days
 
 ### how to run letsencrypt
-    mkdir wp
-    cd wp
-    vi docker-compose.yml
-    
-_===insert the following lines===_
-
-    wordpress:
-      #hostname: yourdomain.com # @TODO Config variable ${APACHE_RUN_DIR} is not defined - after running letsencrypt
-      image: vitr/letsencrypt-wordpress
-      links:
-        - db:mysql
-      ports:
-       - 80:80
-       - 443:443
-    db:
-      image: mariadb
-      environment:
-       MYSQL_ROOT_PASSWORD: pass
-       
-_===end of insert===_
+copy `docker-compose.yml` from this repo into `wp` folder in your homedir (~) (the reason for this is that docker compose requires absolute paths for volumes, e.g. `~/wp/letsencrypt`) . Then run the compose
 
     docker-compose up -d
     docker exec -ti wp_wordpress_1 bash
     
 now run inside the wordpress container
 
-    export TERM=xterm
-    apt-get update
-    apt-get install git 
-    git clone https://github.com/letsencrypt/letsencrypt /opt/letsencrypt
     cd /opt/letsencrypt
-    ./letsencrypt-auto --apache -d yourdomain.com
+    ./letsencrypt-auto --apache -d yourdomain.com -m youremail@domain.com --agree-tos --redirect
+    
+also you may try dry-run to test your system before issuing a real certificate (I messed up with containers a lot and hit their rate limit 5 certs in 7 days)
+
+    ./letsencrypt-auto certonly --dry-run --apache -d yourdomain.com -m youremail@domain.com --agree-tos --redirect
+    
+the certificate files will be stotred in `~/wp/letsencrypt/live/yourdomain.com` and you can reinstall with
+ 
+    ./letsencrypt-auto install --apache -d yourdomain.com -m youremail@domain.com --agree-tos --redirect \
+    --cert-path /etc/letsencrypt/live/yourdomain.com/cert.pem \
+    --key-path /etc/letsencrypt/live/yourdomain.com/privkey.pem \
+    --fullchain-path /etc/letsencrypt/live/yourdomain.com/fullchain.pem 
     
     
-more here
+    
+@TODO: add auto renewal
+
+more about auto renewal process here
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
     
-here is some automation
 
-    ./letsencrypt-auto certonly --dry-run --apache -d fut.website -m vitdotonline@gmail.com --agree-tos --redirect
-    
-    
-    
     
     
