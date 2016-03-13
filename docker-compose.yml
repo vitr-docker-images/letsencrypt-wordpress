@@ -1,0 +1,20 @@
+wordpress:
+  hostname: yourdomain.com
+  image: vitr/letsencrypt-wordpress
+  links:
+    - db:mysql
+  ports:
+   - 80:80
+   - 443:443
+  environment:
+   - APACHE_RUN_DIR=/var/run/apache2
+   - APACHE_LOG_DIR=/var/log/apache2
+  volumes:
+    - ~/wp/wp_html:/var/www/html
+    - ~/wp/apache2_conf:/etc/apache2
+    - ~/wp/letsencrypt:/etc/letsencrypt
+db:
+  image: mariadb
+  environment:
+   - MYSQL_ROOT_PASSWORD=pass  
+  
