@@ -25,7 +25,7 @@ now run inside the wordpress container
     cd /opt/letsencrypt
     ./letsencrypt-auto --apache -d yourdomain.com -m youremail@domain.com --agree-tos --redirect
     
-also you may try dry-run to test your system before issuing a real certificate (I messed up with containers a lot and hit their rate limit 5 certs in 7 days)
+You may also try dry-run to test your system before issuing a real certificate (I messed up with containers a lot and hit their rate limit 5 certs in 7 days)
 
     ./letsencrypt-auto certonly --dry-run --apache -d yourdomain.com -m youremail@domain.com --agree-tos --redirect
     
