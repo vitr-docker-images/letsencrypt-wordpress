@@ -1,7 +1,7 @@
 # docker-letsencrypt-wordpress
 Modded official Wordpress docker image with ability to run letsencrypt
 
-You may use this image for quick obtaining certificates from letsencrypt and use them somewhere else or incorporate these ideas into your production images. 
+You may use this image for quick obtaining certificates from https://letsencrypt.org/ and use them somewhere else or incorporate these ideas into your production images. 
 I haven't changed much, just added these two features:
 
 * ability to restart apache, otherwise the container stops everytime letsencrypt tries to restart apache, note the `tail` command in `apache/docker-entrypoint.sh`
