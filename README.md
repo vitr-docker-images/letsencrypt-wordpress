@@ -1,4 +1,4 @@
-# docker-letsencrypt-wordpress
+# Letsencrypt for WordPress in a docker image
 Modded official Wordpress docker image with ability to run letsencrypt
 
 This repo is the source for the docker hub image https://hub.docker.com/r/vitr/letsencrypt-wordpress/
