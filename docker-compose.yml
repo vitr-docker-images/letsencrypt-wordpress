@@ -10,8 +10,8 @@ wordpress:
    - APACHE_RUN_DIR=/var/run/apache2
    - APACHE_LOG_DIR=/var/log/apache2
   volumes:
+#    - ~/wp/apache2_conf:/etc/apache2  #@TODO share configurations with the host
     - ~/wp/wp_html:/var/www/html
-    - ~/wp/apache2_conf:/etc/apache2
     - ~/wp/letsencrypt:/etc/letsencrypt
 db:
   image: mariadb
