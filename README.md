@@ -1,7 +1,11 @@
 # docker-letsencrypt-wordpress
 Modded official Wordpress docker image with ability to run letsencrypt
 
-@TODO test with fpm
+You may use this image for quick obtaining certificates from letsencrypt and use them somewhere else or incorporate these ideas into your production images. 
+I haven't changed much, just added these two features:
+
+* ability to restart apache, otherwise the container stops everytime letsencrypt tries to restart apache, note the `tail` command in `apache/docker-entrypoint.sh`
+* preinstall letsencrypt client, note `# install letsencrypt` section in `apache/Dockerfile`
 
 ### how to build image
     git clone https://github.com/vitr/docker-letsencrypt-wordpress.git
@@ -39,6 +43,6 @@ the certificate files will be stotred in `~/wp/letsencrypt/live/yourdomain.com` 
 more about auto renewal process here
 https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s-encrypt-on-ubuntu-14-04
     
-
+@TODO test with fpm
     
     
