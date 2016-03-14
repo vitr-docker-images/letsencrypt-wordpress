@@ -17,7 +17,7 @@ I haven't changed much, just added these two features:
 or you can use my pre-built image from the docker hub https://hub.docker.com/r/vitr/letsencrypt-wordpress/
 
 ### how to run letsencrypt
-copy `docker-compose.yml` from this repo into `wp` folder in your homedir (~) (the reason for this is that docker compose requires absolute paths for volumes, e.g. `~/wp/letsencrypt`) . Then run the compose
+copy `docker-compose.yml` from this repo into `wp` folder in your homedir (~) (the reason for this is that docker compose requires absolute paths for volumes, e.g. `~/wp/letsencrypt`). Then run the compose
 
     docker-compose up -d
     docker exec -ti wp_wordpress_1 bash
