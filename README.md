@@ -54,3 +54,4 @@ set correct locale
     locale-gen "en_US.UTF-8"
     localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
     export LC_ALL="en_US.UTF-8"
+    export NCURSES_NO_UTF8_ACS=1
