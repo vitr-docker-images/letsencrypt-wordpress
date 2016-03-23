@@ -49,6 +49,7 @@ https://www.digitalocean.com/community/tutorials/how-to-secure-apache-with-let-s
     
     
 set correct locale
+
     apt-get install locales
     locale-gen "en_US.UTF-8"
     localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
