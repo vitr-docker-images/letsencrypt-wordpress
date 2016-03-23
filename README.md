@@ -55,3 +55,13 @@ set correct locale
     localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
     export LC_ALL="en_US.UTF-8"
     export NCURSES_NO_UTF8_ACS=1
+    
+
+./letsencrypt-auto --help all
+
+-n, --non-interactive, --noninteractive
+                        Run without ever asking for user input. This may
+                        require additional command line flags; the client will
+                        try to explain which ones are required if it finds one
+                        missing (default: False)
+    
